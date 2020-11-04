@@ -11,7 +11,7 @@
   <div id="vis"></div>
   
   <script>
-    const spec = "bar.vl.json";
+    const spec = "https://github.com/reddhi24/FIT3179/blob/main/visualization.vl.json";
   	vegaEmbed("#vis", spec)
     	// result.view provides access to the Vega View API
       .then(result => console.log(result))
