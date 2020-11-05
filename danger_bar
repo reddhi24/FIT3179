@@ -1,0 +1,15 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 200,
+  "height": 200,
+  "title": "Heritage Sites in Danger",
+  "data": {
+    "url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179/main/whc-sites-2019.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "danger", "type": "nominal" , "axis": ""},
+    "y": {"aggregate": "count","title": ""},
+    "color": {"field": "danger","title": "Danger"}
+  }
+}
