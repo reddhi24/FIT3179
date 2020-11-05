@@ -1,0 +1,24 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 300, "height": 200,
+  "title": "Classification of Heritage Sites",
+  "data": {"url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179/main/whc-sites-2019.csv"},
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "timeUnit": "year", "field": "date_inscribed",
+      "axis": {"format": "%Y","grid": false, "title": ""}
+    },
+    "y": {
+      "aggregate": "count", "field": "category","axis":{"grid": false}, "title": ""
+    },
+      "color": {
+      "field": "category",
+      "scale": {"scheme": "tableau10"}
+    },
+    "tooltip": [
+      {"field": "category", "type": "nominal", "title": "Category"},
+      {"aggregate": "count","field": "category", "type": "quantitative", "title": "Number of Sites"}
+          ]
+  }
+}
