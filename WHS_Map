@@ -1,9 +1,22 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 1000,
+  "width": 800,
   "height": 600,
   "title": "World Heritage Sites",
   "projection": {"type": "equirectangular"},
+  "params": [
+    {
+      "name": "yearSelection",
+      "value": 1978,
+      "bind": {
+        "input": "range",
+        "min": 1978,
+        "max": 2019,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
   "layer": [
     {
       "data": {
@@ -16,28 +29,49 @@
       "data": {
         "url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179/main/whc-sites-2019.csv"
       },
-      "selection": { 
-        "continent_highlight": { "type": "multi", "fields": ["region_en"], "bind": "legend" } 
-        },
+      "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": ["region_en"],
+          "bind": "legend"
+        }
+      },
+      "transform": [
+        {"filter": "datum.date_inscribed <= yearSelection"}
+      ],
       "mark": "circle",
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-
         "size": {"value": 10},
-        "color": {
-          "field": "region_en",
-          "type": "nominal",
-          "title": "Region"
+        "color": {"field": "region_en", "type": "nominal", "title": "Region"},
+        "opacity": {
+          "condition": {"selection": "continent_highlight", "value": 0.8},
+          "value": 0.2
         },
-          "opacity": { "condition": {"selection": "continent_highlight", "value": 0.8}, "value": 0.2},
         "tooltip": [
-          {"field":"name_en", "type": "nominal", "title":"Site Name"},
-          {"field": "states_name_en", "type": "nominal","title":"Country"},
-          {"field":"date_inscribed","type": "quantitative","title":"Year of Inscription"},
-          {"field":"area_hectares","type": "quantitative","title": "Area (in hectares)"},
-          {"field":"criteria_txt","type": "nominal","title":"Criteria of Selection"},
-          {"field":"short_description_en","type": "nominal", "title":"Description"}
+          {"field": "name_en", "type": "nominal", "title": "Site Name"},
+          {"field": "states_name_en", "type": "nominal", "title": "Country"},
+          {
+            "field": "date_inscribed",
+            "type": "quantitative",
+            "title": "Year of Inscription"
+          },
+          {
+            "field": "area_hectares",
+            "type": "quantitative",
+            "title": "Area (in hectares)"
+          },
+          {
+            "field": "criteria_txt",
+            "type": "nominal",
+            "title": "Criteria of Selection"
+          },
+          {
+            "field": "short_description_en",
+            "type": "nominal",
+            "title": "Description"
+          }
         ]
       }
     }
