@@ -2,7 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 300,
   "height": 200,
-  "title": "Classification of heritage Sites",
+  "title": {
+    "text": "Classification of Heritage Sites",
+    "fontSize": 20
+  },
   "data": {"url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179/main/whc-sites-2019.csv"
   },
   "config": {
