@@ -46,7 +46,7 @@
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {"value": 30},
-        "color": {"field": "region_en", "type": "nominal", "title": "Region","legend":{"orient": "top-right", "offset": -6}},
+        "color": {"field": "region_en", "type": "nominal", "title": "Region","legend":{"orient": "top", "offset": -30}},
         "opacity": {
           "condition": {"selection": "continent_highlight", "value": 1},
           "value": 0.2
