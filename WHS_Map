@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
+  "width": 1100,
   "height": 500,
   "projection": {"type": "equirectangular"},
   "config": {
@@ -46,7 +46,7 @@
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {"value": 30},
-        "color": {"field": "region_en", "type": "nominal", "title": "Region","legend":{"orient": "top", "offset": -30}},
+        "color": {"field": "region_en", "type": "nominal", "title": "Region","legend":{"orient": "top"}},
         "opacity": {
           "condition": {"selection": "continent_highlight", "value": 1},
           "value": 0.2
