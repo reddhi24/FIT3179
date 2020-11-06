@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>World Heritage Sites</title>
+  <title>World Heritage Sites</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -9,50 +8,55 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    *{
+      margin:0;
+    }
     body{
-       background-color: lightgray;
+       background-color: white;
      }
     .page{
-       width: 850px;    
-       background-color: lightgray;   
+       width: 1000px;    
+       background-color: #CC3300;   
        margin: auto;
-       padding: 50px;
+       padding: 10px;
        padding-top: 35px;
     }
     .description-left{
-      padding-right: 400px;
+      padding-right: 350px;
     }
     .description-right{
-      padding-left: 400px;
+      padding-left: 350px;
     }
     .pure-g{
+      background-color: white;
       margin-bottom: 40px;
+    }
+    .vis-container{
+      width:300px
     }
   </style>
 </head>
 <body>
   <div class="page"><!--start page-->
     <div class="pure-g">
-  <h1 style="text-align:center;font-size: 300%">World Heritage Sites</h1>
-  <p style="font-family:Times New Roman; text-align:right;font-size:150%;">-A visualisation by Reddhi Poddar</p>
-    </div>
-    <div class="pure-g">
-  <p style="font-family:Times New Roman;font-size:100%;">The international treaty called the Convention concerning the Protection of the World Cultural and Natural Heritage, adopted by the United Nations Educational, Scientific and Cultural Organization (UNESCO) on 16 November 1972, strives to encourage the identification, protection and preservation of cultural and natural heritage around the world. UNESCO provides legal protection to these sites for having cultural, scientific, historical or other forms of significance. Till date there are 1,121 sites across 167 countries after 29 new sites were added in 2019.</p>
+  <h1 style="margin:10px;background-color:white;text-align:center;font-size: 300%">World Heritage Sites</h1>
+  <p style="margin:10px;background-color:white;font-family:Times New Roman; text-align:right;font-size:150%;">-A visualisation by Reddhi Poddar</p>
+  <p style="margin:35px;background-color:white;font-family:Times New Roman;font-size:120%;">The international treaty called the Convention concerning the Protection of the World Cultural and Natural Heritage, adopted by the United Nations Educational, Scientific and Cultural Organization (UNESCO) on 16 November 1972, strives to encourage the identification, protection and preservation of cultural and natural heritage around the world. UNESCO provides legal protection to these sites for having cultural, scientific, historical or other forms of significance. Till date there are 1,121 sites across 167 countries after 29 new sites were added in 2019.</p>
 <div id="map"></div>
     </div>
     <div class="pure-g">
-<div id="bar1"></div>
+<div id="bar1" class="vis-container"></div>
     <div class="description-right">
- <p style="font-family:Times New Roman;font-size:100%;">UNESCO inscribes a site as a  world heritage site if it meets at least on the ten criteria set by it and it of "outstanding universal value". Out of the ten criteria, the six cultural criteria are: to represent a masterpiece of human creative genius, to exhibit an important change of human values, to bear exceptional testimony to a cultural tradition or civilisation, to be an outstanding example of a type of architectural ensemble which illustrates a significant stage in human history, to be an outstanding example of a traditional human settlement which is representative of a culture or human interaction with the environment, to be associated with living traditions or events outstanding universal significance. the remaining four natural criteria are: to contain the most important and significant natural habitats for in-situ conservation of biological diversity and superlative natural phenomena of natural beauty and aesthetic importance, to be outstanding examples representing major stages of earth's history and significant on-going ecological and biological processes.</p>
+ <p style="margin:35px;font-family:Times New Roman;font-size:120%;">UNESCO inscribes a site as a  world heritage site if it meets at least on the ten criteria set by it and it of "outstanding universal value". Out of the ten criteria, the six cultural criteria are: to represent a masterpiece of human creative genius, an important change of human values, exceptional testimony to a cultural tradition or civilisation, an outstanding example of a type of architectural ensemble which illustrates a significant stage in human history or a traditional human settlement which is representative of a culture or human interaction with the environment, to be associated with living traditions or events outstanding universal significance. the remaining four natural criteria are: to contain the most important and significant natural habitats and superlative natural phenomena of natural beauty and aesthetic importance, to be outstanding examples representing major stages of earth's history and significant on-going ecological and biological processes.</p>
     </div>
     </div>
 <div class="pure-g">
  <div class=description-left>
-   <p style="font-family:Times New Roman;font-size:100%;">A site may be added to the list of World Heritage in Danger if conditions threaten the characteristics for which the landmark or area was inscribed on the World Heritage List. These problems may involve armed conflict and war, natural disasters, pollution, poaching, or uncontrolled urbanisation or human development. This danger list is intended to increase international awareness of the threats and to encourage counteractive measures.This list is reviewed annually and sites are added or removed as they see fit. The graph along right side shows the number of sites that are in danger currently.
-<div id="bar2"></div>
+   <p style="font-family:Times New Roman;font-size:120%;margin:35px;">A site may be added to the list of World Heritage in Danger if conditions threaten the characteristics for which the landmark or area was inscribed on the World Heritage List. These problems may involve armed conflict and war, natural disasters, pollution, poaching, or uncontrolled urbanisation or human development. This danger list is intended to increase international awareness of the threats and to encourage counteractive measures.This list is reviewed annually and sites are added or removed as they see fit. The graph along right side shows the number of sites that are in danger currently.
+<div id="bar2" class="vis-container"></div>
   </div>
-     </div> <--!end page-->
-   <script type="text/javascript">
+
+<script type="text/javascript">
   
   var vis1 = "WHS_Map";
   
