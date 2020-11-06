@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": container,
+  "width": "container",
   "title": {
     "text": "Classification of Heritage Sites",
     "fontSize": 20
