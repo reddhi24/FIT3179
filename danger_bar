@@ -2,7 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 250,
   "height": 250,
-  "title": "Heritage Sites in Danger",
+  "title": {
+    "text": "Heritage Sites in Danger",
+    "fontSize": 20
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179/main/whc-sites-2019.csv"
   },
