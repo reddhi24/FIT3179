@@ -5,10 +5,7 @@
   "projection": {"type": "equirectangular"},
   "config": {
     "view": {
-      "stroke": "transparent",
-      "gridColor": "lightgray"
-    }
-  },
+      "stroke": "transparent"
     }
   },
   "params": [
