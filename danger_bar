@@ -1,15 +1,34 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 200,
-  "height": 200,
+  "width": 250,
+  "height": 250,
   "title": "Heritage Sites in Danger",
   "data": {
     "url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179/main/whc-sites-2019.csv"
   },
-  "mark": "bar",
+  "config": {
+    "view":{
+      "stroke": "transparent"
+    }
+  },
   "encoding": {
-    "x": {"field": "danger", "type": "nominal" , "axis": ""},
-    "y": {"aggregate": "count","title": ""},
-    "color": {"field": "danger","title": "Danger"}
+    "x": {"field": "danger", "type": "nominal" , "axis": null},
+    "y": {"aggregate": "count", "axis": {"grid": false},"axis": null, "title": ""},
+    "color": {"field": "danger", "legend": {"orient":"top-right"}, "title": "Danger"}
+  },
+  "layer": [{
+    "mark": "bar"
+  },
+    {"mark": {
+      "type": "text",
+      "align": "center",
+      "baseline": "bottom",
+      "fontSize": 15,
+      "fontWeight": "bold"
+    },
+    "encoding": {
+      "text": {"aggregate": "count", "type": "quantitative"},
+      "color": {}
   }
+}]
 }
